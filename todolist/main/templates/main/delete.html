@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Delete {% endblock %}
+
+{% block content %}
+    <p style="padding: 10px 10px 10px 0;">Are you sure you want to delete "{{item_1.text}}"?</p>
+        <div class="col-xs-3">
+            <button onclick="location.href='/{{items.id}}';" class="btn btn-outline-secondary">Cancel</a>
+            <form method="POST" action="#">
+                {% csrf_token %}
+                <button style="margin: 10px 10px 10px 10px;" class="btn btn-success" type="submit" name="Confirm">Confirm</button>
+            </form>
+        </div>
+{% endblock %}

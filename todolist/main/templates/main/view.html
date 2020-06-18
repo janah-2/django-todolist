@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
+
+<h3>View Your Lists</h3>
+    {% for td in user.todolist.all %}
+    <div class="col-xs-3">
+        <div class="container pt-3 my-3 border">
+                <p><a href="/{{td.id}}">{{td.name}}</a></p>
+        </div>
+            <a href="deletelists/{{td.id}}/" class="btn btn-success">Delete</a>
+    </div>
+    {% endfor %}
+
+{% endblock %}
